@@ -1,6 +1,6 @@
 import http from "http";
 
-export class Application {
+class App {
     constructor() {
         this.routes = {};
         this.routes_path = [];
@@ -17,3 +17,4 @@ export class Application {
     }
 }
 
+export default new App
