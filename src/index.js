@@ -17,4 +17,4 @@ class Application {
     }
 }
 
-export default Application;
+export default new Application();
