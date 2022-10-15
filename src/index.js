@@ -2,11 +2,14 @@ import http from "http";
 
 class App {
     constructor() {
-        this.routes = {};
-        this.routes_path = [];
+        this.routes = {
+		"/": function(req, res){
+			res.setHeader("Content-Type", "text/html")
+			res.end("Cannot get /")
+		}
+	};
     }
     get(path, callback) {
-        this.routes_path.push(path);
         this.routes[path] = callback;
     }
     listen(port, callback) {
