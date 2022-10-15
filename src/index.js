@@ -1,4 +1,4 @@
-import http from "http";
+const http = require("http");
 
 class App {
     constructor() {
@@ -27,5 +27,5 @@ class App {
     }
 }
 
-export default new App();
+module.exports = new App();
 
