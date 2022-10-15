@@ -1,6 +1,6 @@
 {
   "name": "hpress",
-  "version": "1.0.2",
+  "version": "1.0.21",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
