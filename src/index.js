@@ -3,21 +3,29 @@ import http from "http";
 class App {
     constructor() {
         this.routes = {
-		"/": function(req, res){
-			res.setHeader("Content-Type", "text/html")
-			res.end("Cannot get /")
-		}
-	};
+            GET: {},
+            POST: {},
+        };
     }
+
     get(path, callback) {
-        this.routes[path] = callback;
+        this.routes.GET[path] = callback;
+    }
+    post(path, callback) {
+        this.routes.POST[path] = callback;
     }
     listen(port, callback) {
         const server = http.createServer((req, res) => {
-            this.routes[req.url](req, res);
+            try {
+                this.routes[req.method][req.url](req, res);
+            } catch (err) {
+                res.setHeader("Content-Type", "text/html");
+                res.end("Cannot get " + req.url);
+            }
         });
         server.listen(port, callback());
     }
 }
 
-export default new App
+export default new App();
+
