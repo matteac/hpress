@@ -14,3 +14,6 @@ hpress.listen(2121, () => {
     console.log("Running on http://localhost:2121");
 });
 ```
+
+Please use [express](https://github.com/expressjs/express) instead HPress, this package is only for my learning.\
+I do not recommend using it in any case.
