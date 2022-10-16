@@ -1,23 +1,20 @@
 const http = require("http");
+const Router = require("./router");
+const send = require("./res/send");
+const sendFile = require("./res/sendFile");
 
 class App {
-    constructor() {
-        this.routes = {
-            GET: {},
-            POST: {},
-        };
+    constructor(router) {
+        this.Router = router;
     }
 
-    get(path, callback) {
-        this.routes.GET[path] = callback;
-    }
-    post(path, callback) {
-        this.routes.POST[path] = callback;
-    }
     listen(port, callback) {
         const server = http.createServer((req, res) => {
+            res.send = send;
+            res.sendFile = sendFile;
+
             try {
-                this.routes[req.method][req.url](req, res);
+                this.Router.routes[req.method][req.url](req, res);
             } catch (err) {
                 res.setHeader("Content-Type", "text/html");
                 res.end("Cannot get " + req.url);
@@ -27,5 +24,4 @@ class App {
     }
 }
 
-module.exports = new App();
-
+module.exports = new App(Router);

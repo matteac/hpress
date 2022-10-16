@@ -1,23 +1,23 @@
 {
-  "name": "hpress",
-  "version": "1.0.31",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^2.0.20"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/matteac/hpress.git"
-  },
-  "bugs": {
-    "url": "https://github.com/matteac/hpress/issues"
-  },
-  "homepage": "https://github.com/matteac/hpress#readme",
-  "description": ""
+    "name": "hpress",
+    "version": "0.0.3",
+    "main": "src/App.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "nodemon": "^2.0.20"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/matteac/hpress.git"
+    },
+    "bugs": {
+        "url": "https://github.com/matteac/hpress/issues"
+    },
+    "homepage": "https://github.com/matteac/hpress#readme",
+    "description": ""
 }
